@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply font-body text-gray-800 bg-white;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-pink-500/20 text-pink-900;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-pink-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 24px rgba(255,111,145,0.10);
+    border-radius: 24px;
+  }
+  .glass-card-dark {
+    background: rgba(30,20,40,0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 4px 24px rgba(157,78,221,0.15);
+    border-radius: 24px;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #FF6F91 0%, #9D4EDD 100%);
+    box-shadow: 0 4px 20px rgba(255,111,145,0.30);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 40px rgba(255,111,145,0.40);
+    transform: translateY(-2px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2 border-pink-500 text-pink-600;
+  }
+  .btn-secondary:hover {
+    @apply bg-pink-50;
+    transform: translateY(-1px);
+  }
+  .gradient-mesh {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(255,111,145,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(157,78,221,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(78,205,196,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 30%, rgba(255,179,71,0.08) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+  .section-padding {
+    @apply px-4 py-16 md:px-8 lg:px-16 xl:px-24 lg:py-24;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-md border border-gray-200 bg-white/80 font-body text-gray-800 placeholder-gray-400 transition-all duration-200;
+  }
+  .input-field:focus {
+    @apply border-pink-400 ring-2 ring-pink-200 outline-none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF0F5; }
+::-webkit-scrollbar-thumb { background: #FFB0C8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FF6F91; }
+
+/* React Calendar overrides — strip all defaults */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+.react-calendar__tile {
+  position: relative;
+  border-radius: 12px !important;
+  padding: 12px 8px !important;
+  transition: all 0.2s ease;
+}
+.react-calendar__tile:hover {
+  background: rgba(255,111,145,0.08) !important;
+}
+.react-calendar__tile--active {
+  background: transparent !important;
+}
+.react-calendar__navigation button {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.1rem;
+  color: #333;
+}
+.react-calendar__month-view__weekdays__weekday {
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+}
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}

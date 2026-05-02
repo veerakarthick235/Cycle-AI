@@ -1,0 +1,48 @@
+# ── Core ──────────────────────────────────────────────────────
+Flask==3.1.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.7
+Flask-JWT-Extended==4.7.1
+Flask-Bcrypt==1.0.1
+Flask-Mail==0.10.0
+Flask-Limiter==3.8.0
+Flask-CORS==5.0.0
+
+# ── Data & Validation ────────────────────────────────────────
+SQLAlchemy==2.0.36
+marshmallow==3.23.1
+marshmallow-sqlalchemy==1.1.0
+psycopg2-binary==2.9.10
+
+# ── Async Tasks ──────────────────────────────────────────────
+celery[redis]==5.4.0
+redis==5.2.1
+
+# ── ML Dependencies ──────────────────────────────────────────
+scikit-learn==1.6.1
+statsmodels==0.14.4
+pandas==2.2.3
+numpy==1.26.4
+joblib==1.4.2
+
+# ── Payments ─────────────────────────────────────────────────
+stripe==11.4.1
+
+# ── Security & Encryption ───────────────────────────────────
+cryptography==44.0.0
+python-dotenv==1.0.1
+
+# ── PDF Generation ───────────────────────────────────────────
+reportlab==4.2.5
+
+# ── Server ───────────────────────────────────────────────────
+gunicorn==23.0.0
+gevent==24.11.1
+
+# ── Monitoring ───────────────────────────────────────────────
+sentry-sdk[flask]==2.19.2
+
+# ── Testing ──────────────────────────────────────────────────
+pytest==8.3.4
+pytest-flask==1.3.0
+factory-boy==3.3.1
